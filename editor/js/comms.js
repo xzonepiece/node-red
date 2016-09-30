@@ -29,10 +29,8 @@ RED.comms = (function() {
     function connectWS() {
         active = true;
         var path = location.hostname;
-        var port = "8000";
-        if (port.length !== 0) {
-            path = path+":"+port;
-        }
+        path = path+":8000";
+       
         path = path+document.location.pathname;
         path = path+(path.slice(-1) == "/"?"":"/")+"comms";
         path = "ws"+(document.location.protocol=="https:"?"s":"")+"://"+path;
